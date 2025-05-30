@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export type CardProps = {
+export type flagProps = {
   image: string;
   country: string;
   capital: string;
@@ -14,7 +14,7 @@ export const Card = ({
   capital,
   region,
   population,
-}: CardProps) => {
+}: flagProps) => {
   return (
     <div className="h-full bg-white overflow-hidden rounded-lg shadow-lg">
       <div className="aspect-video w-full">
