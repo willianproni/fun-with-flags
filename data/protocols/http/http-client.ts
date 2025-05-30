@@ -1,5 +1,5 @@
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
-import { HttpResponse } from "./http.response";
+import { HttpResponse } from "./http-response";
 
 type HttpClientParams<T> = {
   url: string;
