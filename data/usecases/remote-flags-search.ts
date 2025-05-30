@@ -1,9 +1,9 @@
 import { flagProps, searchFlagsResponse } from "@/domain/model/flags-model";
-import { ISearchFlags } from "@/domain/usecases/search-flags";
+import { IFlagsSearch } from "@/domain/usecases/flags-search";
 import { HttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
 
-export class HttpSearchFlags implements ISearchFlags {
+export class HttpFlagsSearch implements IFlagsSearch {
   private readonly httpClient: HttpClient<searchFlagsResponse[]>;
 
   constructor(httpClient: HttpClient<searchFlagsResponse[]>) {

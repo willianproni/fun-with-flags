@@ -1,5 +1,5 @@
 import { flagProps } from "../model/flags-model";
 
-export interface ISearchFlags {
+export interface IFlagsSearch {
   execute(): Promise<flagProps[]>;
 }
