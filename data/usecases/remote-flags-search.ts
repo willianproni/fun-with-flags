@@ -3,7 +3,7 @@ import { IFlagsSearch } from "@/domain/usecases/flags-search";
 import { HttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
 
-export class HttpFlagsSearch implements IFlagsSearch {
+export class RemoteFlagsSearch implements IFlagsSearch {
   private readonly httpClient: HttpClient<searchFlagsResponse[]>;
 
   constructor(httpClient: HttpClient<searchFlagsResponse[]>) {

@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { Card } from "./components";
 import { flagProps } from "./components/Card";
 import { FetchHttpClient } from "@/infra/http/fetch-http-client";
-import { HttpFlagsSearch } from "@/data/usecases/remote-flags-search";
+import { RemoteFlagsSearch } from "@/data/usecases/remote-flags-search";
 
 export default function Home() {
   const [countriesList, setCountriesList] = useState<flagProps[]>([]);
 
   const fetchHttpClient = new FetchHttpClient();
 
-  const seacrhFlagsUseCase = new HttpFlagsSearch(fetchHttpClient);
+  const seacrhFlagsUseCase = new RemoteFlagsSearch(fetchHttpClient);
 
   useEffect(() => {
     const fetchCountries = async () => {
