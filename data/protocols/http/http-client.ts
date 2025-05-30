@@ -1,12 +1,12 @@
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
 import { HttpResponse } from "./http-response";
 
-type HttpClientParams<T> = {
+type HttpClientParams = {
   url: string;
   method: methodHttp;
-  body?: T;
+  body?: unknown;
 };
 
-export interface HttpClient<T, R> {
-  request(params: HttpClientParams<T>): Promise<HttpResponse<R>>;
+export interface HttpClient<R> {
+  request(params: HttpClientParams): Promise<HttpResponse<R>>;
 }
