@@ -1,3 +1,7 @@
+type LanguageDetails = {
+  official: string;
+  common: string;
+};
 
 export type searchFlagsResponse = {
   flags: {
@@ -9,10 +13,7 @@ export type searchFlagsResponse = {
     common: string;
     official: string;
     nativeName: {
-      mon: {
-        official: string;
-        common: string;
-      };
+      [languageCode: string]: LanguageDetails;
     };
   };
   capital: string[];
