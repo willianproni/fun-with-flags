@@ -2,11 +2,12 @@ import { flagProps, searchFlagsResponse } from "@/domain/model/flags-model";
 import { IFlagsSearch } from "@/domain/usecases/flags-search";
 import { HttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
+import { UnexpectedError } from "@/domain/errors/unexpected-error";
 
 export class RemoteFlagsSearch implements IFlagsSearch {
-  private readonly httpClient: HttpClient<searchFlagsResponse[]>;
+  private readonly httpClient: HttpClient<unknown, searchFlagsResponse[]>;
 
-  constructor(httpClient: HttpClient<searchFlagsResponse[]>) {
+  constructor(httpClient: HttpClient<unknown, searchFlagsResponse[]>) {
     this.httpClient = httpClient;
   }
 
@@ -16,6 +17,10 @@ export class RemoteFlagsSearch implements IFlagsSearch {
         url: "/all?fields=name,flags,capital,region,population",
         method: methodHttp.GET,
       });
+
+      if (!response?.body) {
+        throw new Error("No Content flags");
+      }
 
       const flagList: flagProps[] = response.body.map((item) => {
         return {
@@ -29,7 +34,8 @@ export class RemoteFlagsSearch implements IFlagsSearch {
 
       return flagList;
     } catch (error) {
-      throw error;
+      console.log({ error });
+      throw new UnexpectedError();
     }
   }
 }
