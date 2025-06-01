@@ -5,6 +5,7 @@ import { Footer, Header } from "./components";
 
 const poppins = Poppins({
   weight: ["400", "700"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {
