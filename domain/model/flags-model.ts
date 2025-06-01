@@ -22,6 +22,7 @@ export type searchFlagsResponse = {
 };
 
 export type flagProps = {
+  id: number;
   image: string;
   country: string;
   capital: string;

@@ -22,8 +22,9 @@ export class RemoteFlagsSearch implements IFlagsSearch {
         throw new Error("No Content flags");
       }
 
-      const flagList: flagProps[] = response.body.map((item) => {
+      const flagList: flagProps[] = response.body.map((item, index) => {
         return {
+          id: index,
           image: item.flags.png,
           country: item.name.common,
           capital: item.capital[0],

@@ -1,14 +1,8 @@
+import { flagProps } from "@/domain/model/flags-model";
 import Image from "next/image";
 
-export type flagProps = {
-  image: string;
-  country: string;
-  capital: string;
-  region: string;
-  population: string;
-};
-
 export const Card = ({
+  id,
   image,
   country,
   capital,
@@ -19,12 +13,12 @@ export const Card = ({
     <div className="h-full bg-white overflow-hidden rounded-lg shadow-lg">
       <div className="aspect-video w-full">
         <Image
-          priority
           className="object-cover"
           src={image}
-          width={600}
-          height={400}
+          width={500}
+          height={300}
           alt="Image flag"
+          priority={id < 12}
         />
       </div>
       <div className="p-6">
