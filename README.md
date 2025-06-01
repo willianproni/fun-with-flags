@@ -1,3 +1,15 @@
+## Project - Fun with flags
+
+![image](https://github.com/user-attachments/assets/b70cc469-b86e-4c98-a2e6-deb25dde5ae7)
+
+- [x] Dependency injection ✅
+- [x] Jest ✅
+  - [x] Spy ✅
+  - [x] Mocs ✅
+- [x] Tailwind css ✅
+- [ ] Cypress ❌ (Future feat)
+- [ ] Storybook ❌ (Future feat)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
