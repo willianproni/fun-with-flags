@@ -2,6 +2,7 @@ import { Card } from "./components";
 import { FetchHttpClient } from "@/infra/http/fetch-http-client";
 import { RemoteFlagsSearch } from "@/data/usecases/remote-flags-search";
 import { flagProps } from "@/domain/model/flags-model";
+import Link from "next/link";
 
 const fetchHttpClient = new FetchHttpClient();
 
@@ -22,21 +23,22 @@ export default async function Home() {
   const flagsInfo: flagProps[] = await fetchCountries();
 
   return (
-    <main className="flex-1">
+    <>
       {flagsInfo.length ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {flagsInfo?.map(
             ({ image, capital, country, population, region, id }) => {
               return (
-                <Card
-                  key={id}
-                  id={id}
-                  image={image}
-                  country={country}
-                  capital={capital}
-                  region={region}
-                  population={population}
-                />
+                <Link key={id} href={{ pathname: `/country/${country}` }}>
+                  <Card
+                    id={id}
+                    image={image}
+                    country={country}
+                    capital={capital}
+                    region={region}
+                    population={population}
+                  />
+                </Link>
               );
             }
           )}
@@ -46,6 +48,6 @@ export default async function Home() {
           <span className="text-3xl">No flags found</span>
         </div>
       )}
-    </main>
+    </>
   );
 }
