@@ -1,11 +1,25 @@
 import Image from "next/image";
 import Section from "../components/Section";
+import CountryBorderCard from "../components/CountryBorderCards";
 
 type CountryScreenProps = {
   params: Promise<{
     acronym: string;
   }>;
 };
+
+const border = [
+  "ARG",
+  "BOL",
+  "COL",
+  "GUF",
+  "GUY",
+  "PRY",
+  "PER",
+  "SUR",
+  "URY",
+  "VEN",
+];
 
 const CountryScreen = async ({ params }: CountryScreenProps) => {
   const { acronym } = await params;
@@ -25,11 +39,11 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
         </div>
 
         <div className="flex flex-col justify-center p-6">
-          <h2 className="text-4xl font-bold mb-1">Brazil ({acronym})</h2>
+          <h2 className="text-3xl font-bold mb-1">Brazil ({acronym})</h2>
 
-          <h3 className="text-xl mb-4">South America</h3>
+          <h3 className="text-xl mb-6">South America</h3>
 
-          <div className=" grid grid-cols-2 max-w-[600px] space-y-2 gap-4">
+          <div className=" grid grid-cols-1 md:grid-cols-2 max-w-[600px] space-y-2 gap-4 mb-4">
             <Section title="Capital" value="Brasília" icon="/map-pin.svg" />
             <Section title="Language" value="Português" icon="/languages.svg" />
             <Section
@@ -37,6 +51,12 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
               value="214 million"
               icon="/population.svg"
             />
+          </div>
+
+          <div className="flex gap-2">
+            {border.map((item, index) => {
+              return <CountryBorderCard key={index} acronym={item} />;
+            })}
           </div>
         </div>
       </div>
