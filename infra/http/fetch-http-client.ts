@@ -7,14 +7,18 @@ export class FetchHttpClient implements HttpClient<any, any> {
   async request(params: {
     url: string;
     method: methodHttp;
+    cache?: RequestCache;
+    next?: NextFetchRequestConfig;
     body?: any;
   }): Promise<HttpResponse<any>> {
     try {
-      const { method, url } = params;
+      const { method, url, body, next, cache } = params;
 
       const response = await fetch(process.env.NEXT_PUBLIC_API_URL + url, {
-        method,
-        body: params?.body,
+        method: method,
+        cache: cache,
+        next: next,
+        body: body,
       });
 
       if (!response.ok) {

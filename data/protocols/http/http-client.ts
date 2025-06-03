@@ -4,6 +4,8 @@ import { HttpResponse } from "./http-response";
 type HttpClientParams<T> = {
   url: string;
   method: methodHttp;
+  cache?: RequestCache;
+  next?: NextFetchRequestConfig;
   body?: T;
 };
 
