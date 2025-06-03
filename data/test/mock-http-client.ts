@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
-import { HttpClient } from "../protocols/http/http-client";
+import { IHttpClient } from "../protocols/http/http-client";
 import { HttpResponse } from "../protocols/http/http-response";
 import { HttpStatusCode } from "@/@shared/protocols/http/httpStatusCode";
 
-export class HttpClientSpy<T, R> implements HttpClient<T, R> {
+export class HttpClientSpy<T, R> implements IHttpClient<T, R> {
   url?: string;
   method!: methodHttp;
   body?: T;

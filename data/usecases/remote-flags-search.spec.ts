@@ -1,4 +1,4 @@
-import { searchFlagsResponse } from "@/domain/model/flags-model";
+import { flagsSearchResponse } from "@/domain/model/flags-model";
 import { HttpClientSpy } from "../test/mock-http-client";
 import { RemoteFlagsSearch } from "./remote-flags-search";
 import { HttpStatusCode } from "@/@shared/protocols/http/httpStatusCode";
@@ -6,7 +6,7 @@ import { mockFlagsSearch } from "@/domain/test/mock-flags-search";
 import { UnexpectedError } from "@/domain/errors/unexpected-error";
 
 describe("Remote flags search", () => {
-  const makeMockHttpResponse = (): searchFlagsResponse[] => [
+  const makeMockHttpResponse = (): flagsSearchResponse[] => [
     {
       flags: {
         png: "https://flagcdn.com/w320/mn.png",
@@ -52,7 +52,7 @@ describe("Remote flags search", () => {
   ];
 
   const makeSut = () => {
-    const httpClientSpy = new HttpClientSpy<unknown, searchFlagsResponse[]>();
+    const httpClientSpy = new HttpClientSpy<unknown, flagsSearchResponse[]>();
     const sut = new RemoteFlagsSearch(httpClientSpy);
 
     return { sut, httpClientSpy };

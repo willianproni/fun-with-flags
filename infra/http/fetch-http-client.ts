@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
-import { HttpClient } from "@/data/protocols/http/http-client";
+import { IHttpClient } from "@/data/protocols/http/http-client";
 import { HttpResponse } from "@/data/protocols/http/http-response";
 
-export class FetchHttpClient implements HttpClient<any, any> {
+export class FetchHttpClient implements IHttpClient<any, any> {
   async request(params: {
     url: string;
     method: methodHttp;

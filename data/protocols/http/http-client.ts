@@ -9,6 +9,6 @@ type HttpClientParams<T> = {
   body?: T;
 };
 
-export interface HttpClient<T, R> {
+export interface IHttpClient<T, R> {
   request(params: HttpClientParams<T>): Promise<HttpResponse<R>>;
 }
