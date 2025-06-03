@@ -2,7 +2,7 @@ import { flagProps } from "../model/flags-model";
 
 export const mockFlagsSearch = (): flagProps[] => [
   {
-    id: 0,
+    acronym: "MNG",
     capital: "Ulan Bator",
     country: "Mongolia",
     image: "https://flagcdn.com/w320/mn.png",
@@ -10,7 +10,7 @@ export const mockFlagsSearch = (): flagProps[] => [
     region: "Asia",
   },
   {
-    id: 1,
+    acronym: "SWE",
     capital: "Stockholm",
     country: "Sweden",
     image: "https://flagcdn.com/w320/se.png",

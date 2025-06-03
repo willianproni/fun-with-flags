@@ -1,5 +1,13 @@
-import { flagProps } from "@/domain/model/flags-model";
 import Image from "next/image";
+
+type flagCardProps = {
+  id: number;
+  image: string;
+  country: string;
+  capital: string;
+  region: string;
+  population: string;
+};
 
 export const Card = ({
   id,
@@ -8,7 +16,7 @@ export const Card = ({
   capital,
   region,
   population,
-}: flagProps) => {
+}: flagCardProps) => {
   return (
     <div className="h-full bg-white overflow-hidden rounded-lg shadow-lg">
       <div className="aspect-video w-full">

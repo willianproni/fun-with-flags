@@ -27,11 +27,11 @@ export default async function Home() {
       {flagsInfo.length ? (
         <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {flagsInfo?.map(
-            ({ image, capital, country, population, region, id }) => {
+            ({ image, capital, country, population, region, acronym }, index) => {
               return (
-                <Link key={id} href={{ pathname: `/country/${country}` }}>
+                <Link key={index} href={{ pathname: `/country/${acronym}` }}>
                   <Card
-                    id={id}
+                    id={index}
                     image={image}
                     country={country}
                     capital={capital}

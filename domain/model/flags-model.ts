@@ -9,6 +9,7 @@ export type searchFlagsResponse = {
     svg: string;
     alt: string;
   };
+  cca3: string;
   name: {
     common: string;
     official: string;
@@ -22,7 +23,7 @@ export type searchFlagsResponse = {
 };
 
 export type flagProps = {
-  id: number;
+  acronym: string;
   image: string;
   country: string;
   capital: string;

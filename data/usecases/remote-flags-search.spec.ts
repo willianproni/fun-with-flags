@@ -13,6 +13,7 @@ describe("Remote flags search", () => {
         svg: "https://flagcdn.com/mn.svg",
         alt: "The flag of Mongolia is composed of three equal vertical bands of red, blue and red, with the national emblem — the Soyombo — in gold centered in the hoist-side red band.",
       },
+      cca3: "MNG",
       name: {
         common: "Mongolia",
         official: "Mongolia",
@@ -33,6 +34,7 @@ describe("Remote flags search", () => {
         svg: "https://flagcdn.com/se.svg",
         alt: "The flag of Sweden has a blue field with a large golden-yellow cross that extend to the edges of the field. The vertical part of this cross is offset towards the hoist side.",
       },
+      cca3: "SWE",
       name: {
         common: "Sweden",
         official: "Kingdom of Sweden",
