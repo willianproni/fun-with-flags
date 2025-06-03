@@ -13,7 +13,7 @@ export const Card = ({
     <div className="h-full bg-white overflow-hidden rounded-lg shadow-lg">
       <div className="aspect-video w-full">
         <Image
-          className="object-cover"
+          className="w-full h-full object-cover"
           src={image}
           width={500}
           height={300}
