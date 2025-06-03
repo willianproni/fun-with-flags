@@ -16,6 +16,8 @@ export class RemoteFlagsSearch implements IFlagsSearch {
       const response = await this.httpClient.request({
         url: "/all?fields=name,cca3,flags,capital,region,population",
         method: methodHttp.GET,
+        cache: "force-cache",
+        next: { revalidate: 3600 },
       });
 
       if (!response?.body) {
