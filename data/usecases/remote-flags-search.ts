@@ -14,7 +14,7 @@ export class RemoteFlagsSearch implements IFlagsSearch {
   async execute(): Promise<flagProps[]> {
     try {
       const response = await this.httpClient.request({
-        url: "/all?fields=name,flags,capital,region,population",
+        url: "/all?fields=name,cca3,flags,capital,region,population",
         method: methodHttp.GET,
       });
 
@@ -22,9 +22,9 @@ export class RemoteFlagsSearch implements IFlagsSearch {
         throw new Error("No Content flags");
       }
 
-      const flagList: flagProps[] = response.body.map((item, index) => {
+      const flagList: flagProps[] = response.body.map((item) => {
         return {
-          id: index,
+          acronym: item.cca3,
           image: item.flags.png,
           country: item.name.common,
           capital: item.capital[0],

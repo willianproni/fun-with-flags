@@ -21,11 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <Header />
       <html lang="en">
-        <body className={`${poppins.className} antialiased`}>{children}</body>
+        <body className={`${poppins.className} antialiased`}>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </body>
       </html>
-      <Footer />
     </>
   );
 }
