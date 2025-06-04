@@ -34,10 +34,11 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
 
   return (
     <>
-      <div className="grid items-center grid-cols-1 md:grid-cols-[auto_1fr] gap-4">
-        <div className="w-full">
+      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4">
+        <div className="flex items-center md:max-w-[600px]">
           <Image
             src={flagDetails.image || "https://placehold.co/600x400.svg"}
+            className="max-h-80 object-cover rounded-lg"
             width={500}
             height={300}
             alt="Image flag"
