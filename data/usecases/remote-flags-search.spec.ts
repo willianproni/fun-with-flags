@@ -69,7 +69,7 @@ describe("Remote flags search", () => {
     await sut.execute();
 
     expect(httpClientSpy.url).toBe(
-      "/all?fields=name,flags,capital,region,population"
+      "/all?fields=name,cca3,flags,capital,region,population"
     );
   });
 
