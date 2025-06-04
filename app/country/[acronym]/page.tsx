@@ -10,22 +10,22 @@ type CountryScreenProps = {
   }>;
 };
 
+const fetchHttpClient = new FetchHttpClient();
+
+const flagDetailsSearchUseCase = new RemoteFlagDetailsSearch(fetchHttpClient);
+
+const getFlagDetailsInfo = async (acronym: string) => {
+  try {
+    const response = flagDetailsSearchUseCase.execute(acronym);
+
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const CountryScreen = async ({ params }: CountryScreenProps) => {
   const { acronym } = await params;
-
-  const fetchHttpClient = new FetchHttpClient();
-
-  const flagDetailsSearchUseCase = new RemoteFlagDetailsSearch(fetchHttpClient);
-
-  const getFlagDetailsInfo = (acronym: string) => {
-    try {
-      const response = flagDetailsSearchUseCase.execute(acronym);
-
-      return response;
-    } catch (error) {
-      throw error;
-    }
-  };
 
   const flagDetails = await getFlagDetailsInfo(acronym);
 
@@ -41,7 +41,6 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
             width={500}
             height={300}
             alt="Image flag"
-            priority
           />
         </div>
 
