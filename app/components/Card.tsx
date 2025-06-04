@@ -32,17 +32,17 @@ export const Card = ({
       <div className="p-6">
         <h2 className="text-xl font-semibold mb-4">{country}</h2>
         <div className="space-y-2">
-          <div className="flex items-center gap-1">
+          <div>
             <span className="font-semibold">Capital:</span>
-            <span>{capital}</span>
+            <span> {capital}</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div>
             <span className="font-semibold">Regions:</span>
-            <span>{region}</span>
+            <span> {region}</span>
           </div>
-          <div className="flex items-center gap-1">
+          <div>
             <span className="font-semibold">Population:</span>
-            <span>{population}</span>
+            <span> {population}</span>
           </div>
         </div>
       </div>

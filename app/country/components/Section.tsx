@@ -8,7 +8,7 @@ type SectionProps = {
 
 const Section = ({ title, value, icon }: SectionProps) => {
   return (
-    <div className="flex items-center gap-4 border rounded p-4">
+    <div className="flex gap-4 border rounded p-4">
       <Image src={icon} alt="section icon" width={36} height={36} />
       <div className="flex flex-col">
         <span className="font-semibold">{title}:</span>

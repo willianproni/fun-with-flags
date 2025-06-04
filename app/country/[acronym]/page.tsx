@@ -34,7 +34,7 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4">
         <div className="flex items-center md:max-w-[600px]">
           <Image
             src={flagDetails.image || "https://placehold.co/600x400.svg"}
@@ -70,11 +70,17 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
             />
           </div>
 
-          <div className="flex items-center gap-2">
-            <span className="font-semibold">Borders:</span>
-            {flagDetails?.border.map((item, index) => {
-              return <CountryBorderCard key={index} acronym={item} />;
-            })}
+          <div className="flex flex-wrap items-center">
+            <span className="font-semibold mr-1">Borders:</span>
+            {flagDetails?.border?.length > 0 ? (
+              <>
+                {flagDetails?.border.map((item, index) => {
+                  return <CountryBorderCard key={index} acronym={item} />;
+                })}
+              </>
+            ) : (
+              "None"
+            )}
           </div>
         </div>
       </div>
