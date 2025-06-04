@@ -24,6 +24,7 @@ export type flagsSearchResponse = {
 
 export type flagDetailsResponse = {
   flags: {
+    png: string;
     svg: string;
     alt: string;
   };

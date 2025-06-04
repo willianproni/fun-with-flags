@@ -2,7 +2,6 @@ import { flagProps, flagsSearchResponse } from "@/domain/model/flags-model";
 import { IFlagsSearch } from "@/domain/usecases/flags-search";
 import { IHttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
-import { UnexpectedError } from "@/domain/errors/unexpected-error";
 
 export class RemoteFlagsSearch implements IFlagsSearch {
   private readonly httpClient: IHttpClient<unknown, flagsSearchResponse[]>;
@@ -37,8 +36,7 @@ export class RemoteFlagsSearch implements IFlagsSearch {
 
       return flagList;
     } catch (error) {
-      console.log({ error });
-      throw new UnexpectedError();
+      throw error;
     }
   }
 }
