@@ -1,0 +1,1 @@
+npm test && npx next lint && npx tsc --noEmit
