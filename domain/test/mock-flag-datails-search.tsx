@@ -1,3 +1,4 @@
+import { formatCompactNumber } from "@/util";
 import { flagDetailsProps, flagDetailsResponse } from "../model/flags-model";
 
 export const makeMockRemoteFlagDetailsSearchHttpResponse =
@@ -55,6 +56,6 @@ export const makeResponseUseCaseRemoteFlagDetailsSearch =
     country: "Brazil",
     image: "https://flagcdn.com/br.svg",
     language: "Portuguese",
-    population: "212559409",
+    population: formatCompactNumber(212559409),
     region: "Americas",
   });
