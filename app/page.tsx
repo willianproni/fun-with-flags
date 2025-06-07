@@ -32,9 +32,5 @@ export default async function Home() {
     );
   }
 
-  return (
-    <>
-      <FlagSearch flags={flagsInfo ?? []} />
-    </>
-  );
+  return <FlagSearch flags={flagsInfo ?? []} />;
 }

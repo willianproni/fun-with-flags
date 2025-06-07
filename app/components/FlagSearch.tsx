@@ -52,7 +52,7 @@ export const FlagSearch = ({ flags }: FlagSearchProps) => {
       {filterFlags.length === 0 ? (
         <NotFlags />
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-12 lg:gap-8">
           {filterFlags?.map(
             (
               { image, capital, country, population, region, acronym },
