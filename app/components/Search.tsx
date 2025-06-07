@@ -27,3 +27,5 @@ export const Search = ({ set }: SearchProps) => {
     </div>
   );
 };
+
+export default Search;

@@ -77,3 +77,5 @@ export const FlagsSearch = ({ flags }: FlagSearchProps) => {
     </>
   );
 };
+
+export default FlagsSearch;
