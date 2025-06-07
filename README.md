@@ -4,6 +4,7 @@ Available in: https://fun-with-flags-mocha.vercel.app/
 
 ![image](https://github.com/user-attachments/assets/b70cc469-b86e-4c98-a2e6-deb25dde5ae7)
 
+## Used in the development
 
 - [x] Dependency injection ✅
 - [x] Jest ✅
