@@ -3,6 +3,7 @@ import Section from "../components/Section";
 import CountryBorderCard from "../components/CountryBorderCards";
 import { RemoteFlagDetailsSearch } from "@/data/usecases/remote-flag-details-search";
 import { FetchHttpClient } from "@/infra/http/fetch-http-client";
+import Link from "next/link";
 
 type CountryScreenProps = {
   params: Promise<{
@@ -34,6 +35,12 @@ const CountryScreen = async ({ params }: CountryScreenProps) => {
 
   return (
     <>
+      <div className="mb-8">
+        <Link className="bg-gray-300 px-4 py-2 rounded" href="/">
+          Back
+        </Link>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4">
         <div className="flex items-center md:max-w-[600px]">
           <Image
