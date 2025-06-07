@@ -12,7 +12,7 @@ interface FlagSearchProps {
   flags: flagProps[];
 }
 
-export const FlagSearch = ({ flags }: FlagSearchProps) => {
+export const FlagsSearch = ({ flags }: FlagSearchProps) => {
   const [searchFlags, setSearchFlags] = useState<string>("");
   const [selectRegion, setSelectRegion] = useState<string>("All regions");
 

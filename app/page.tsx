@@ -1,7 +1,7 @@
 import { RemoteFlagsSearch } from "@/data/usecases/remote-flags-search";
 import { flagProps } from "@/domain/model/flags-model";
 import { FetchHttpClient } from "@/infra/http/fetch-http-client";
-import { FlagSearch } from "./components/FlagSearch";
+import { FlagsSearch } from "./components/FlagsSearch";
 
 const fetchHttpClient = new FetchHttpClient();
 
@@ -32,5 +32,5 @@ export default async function Home() {
     );
   }
 
-  return <FlagSearch flags={flagsInfo ?? []} />;
+  return <FlagsSearch flags={flagsInfo ?? []} />;
 }
