@@ -2,6 +2,7 @@ import { flagProps, flagsSearchResponse } from "@/domain/model/flags-model";
 import { IFlagsSearch } from "@/domain/usecases/flags-search";
 import { IHttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
+import { formatCompactNumber } from "@/util";
 
 export class RemoteFlagsSearch implements IFlagsSearch {
   private readonly httpClient: IHttpClient<unknown, flagsSearchResponse[]>;
@@ -30,9 +31,11 @@ export class RemoteFlagsSearch implements IFlagsSearch {
           country: item.name.common,
           capital: item.capital[0],
           region: item.region,
-          population: item.population.toString(),
+          population: formatCompactNumber(item.population),
         };
       });
+
+      flagList.sort((a, b) => a.country.localeCompare(b.country, "en-US"));
 
       return flagList;
     } catch (error) {

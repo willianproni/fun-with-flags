@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${poppins.className} antialiased`}>
+        <body className={`${poppins.className} antialiased p-8 md:px-24`}>
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex flex-col flex-1">{children}</main>
           <Footer />
         </body>
       </html>

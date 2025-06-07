@@ -18,7 +18,10 @@ export const Card = ({
   population,
 }: flagCardProps) => {
   return (
-    <div className="h-full bg-white overflow-hidden rounded-lg shadow-lg">
+    <div
+      className="h-full bg-white overflow-hidden rounded-lg shadow-lg
+     hover:shadow-xl hover:-translate-y-1 transform transition-all duration-300 ease-in-out"
+    >
       <div className="aspect-video w-full">
         <Image
           className="w-full h-full object-cover"

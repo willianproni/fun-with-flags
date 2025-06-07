@@ -1,8 +1,7 @@
-import { Card } from "./components";
-import { FetchHttpClient } from "@/infra/http/fetch-http-client";
 import { RemoteFlagsSearch } from "@/data/usecases/remote-flags-search";
 import { flagProps } from "@/domain/model/flags-model";
-import Link from "next/link";
+import { FetchHttpClient } from "@/infra/http/fetch-http-client";
+import { FlagsSearch } from "./components/FlagsSearch";
 
 const fetchHttpClient = new FetchHttpClient();
 
@@ -22,32 +21,16 @@ const fetchCountries = async () => {
 export default async function Home() {
   const flagsInfo: flagProps[] = await fetchCountries();
 
-  return (
-    <>
-      {flagsInfo.length ? (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {flagsInfo?.map(
-            ({ image, capital, country, population, region, acronym }, index) => {
-              return (
-                <Link key={index} href={{ pathname: `/country/${acronym}` }}>
-                  <Card
-                    id={index}
-                    image={image}
-                    country={country}
-                    capital={capital}
-                    region={region}
-                    population={population}
-                  />
-                </Link>
-              );
-            }
-          )}
-        </div>
-      ) : (
-        <div className="flex justify-center">
-          <span className="text-3xl">No flags found</span>
-        </div>
-      )}
-    </>
-  );
+  if (flagsInfo.length === 0) {
+    return (
+      <div className="flex flex-col items-center m-auto justify-center">
+        <span className="text-3xl">
+          Ops, We are having trouble displaying countries
+        </span>
+        <span className="text-xl">please try again later.</span>
+      </div>
+    );
+  }
+
+  return <FlagsSearch flags={flagsInfo ?? []} />;
 }

@@ -5,6 +5,7 @@ import {
 import { IFlagDatailsSearch } from "@/domain/usecases/flag-details-search";
 import { IHttpClient } from "../protocols/http/http-client";
 import { methodHttp } from "@/@shared/protocols/http/httpMethod";
+import { formatCompactNumber } from "@/util";
 
 export class RemoteFlagDetailsSearch implements IFlagDatailsSearch {
   httpClient: IHttpClient<unknown, flagDetailsResponse>;
@@ -33,7 +34,7 @@ export class RemoteFlagDetailsSearch implements IFlagDatailsSearch {
         capital: country.capital[0],
         image: country.flags.svg,
         language: country.languages[language],
-        population: country.population.toString(),
+        population: formatCompactNumber(country.population),
         region: country.region,
         border: country.borders,
       };
