@@ -10,9 +10,11 @@ export const NotFlags = () => {
         height={72}
       />
       <div className="flex flex-col">
-      <span className="text-3xl">No country found</span>
-      <span className="text-3xl">for your search</span>
-    </div>
+        <span className="text-3xl">No country found</span>
+        <span className="text-3xl">for your search</span>
+      </div>
     </div>
   );
 };
+
+export default NotFlags;

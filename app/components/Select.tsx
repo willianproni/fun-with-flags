@@ -21,3 +21,5 @@ export const Select = ({ options, value, set }: SelectProps) => {
     </div>
   );
 };
+
+export default Select;
