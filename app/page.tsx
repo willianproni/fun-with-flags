@@ -19,12 +19,15 @@ const fetchCountries = async () => {
 };
 
 export default async function Home() {
-  const flagsInfo: flagProps[] = (await fetchCountries()) ?? [];
+  const flagsInfo: flagProps[] = await fetchCountries();
 
   if (flagsInfo.length === 0) {
     return (
-      <div className="flex justify-center">
-        <span className="text-3xl">No flags found</span>
+      <div className="flex flex-col items-center m-auto justify-center">
+        <span className="text-3xl">
+          Ops, We are having trouble displaying countries
+        </span>
+        <span className="text-xl">please try again later.</span>
       </div>
     );
   }

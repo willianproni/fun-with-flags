@@ -6,6 +6,7 @@ import { useState } from "react";
 import Card from "./Card";
 import { Search } from "./Search";
 import { Select } from "./Select";
+import { NotFlags } from "./NotFlags";
 
 interface FlagSearchProps {
   flags: flagProps[];
@@ -48,24 +49,31 @@ export const FlagSearch = ({ flags }: FlagSearchProps) => {
         <Select options={regions} value={selectRegion} set={setSelectRegion} />
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6">
-        {filterFlags?.map(
-          ({ image, capital, country, population, region, acronym }, index) => {
-            return (
-              <Link key={index} href={{ pathname: `/country/${acronym}` }}>
-                <Card
-                  id={index}
-                  image={image}
-                  country={country}
-                  capital={capital}
-                  region={region}
-                  population={population}
-                />
-              </Link>
-            );
-          }
-        )}
-      </div>
+      {filterFlags.length === 0 ? (
+        <NotFlags />
+      ) : (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+          {filterFlags?.map(
+            (
+              { image, capital, country, population, region, acronym },
+              index
+            ) => {
+              return (
+                <Link key={index} href={{ pathname: `/country/${acronym}` }}>
+                  <Card
+                    id={index}
+                    image={image}
+                    country={country}
+                    capital={capital}
+                    region={region}
+                    population={population}
+                  />
+                </Link>
+              );
+            }
+          )}
+        </div>
+      )}
     </>
   );
 };
