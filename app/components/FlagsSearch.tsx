@@ -40,7 +40,7 @@ export const FlagsSearch = ({ flags }: FlagSearchProps) => {
         <div className="w-full">
           <Search set={setSearchFlags} />
 
-          <span className="text-gray-600 pl-2">
+          <span id="showingFlags" className="text-gray-600 pl-2">
             Showing {countCountries}{" "}
             {countCountries === 1 ? "Country" : "Countries"}
           </span>
@@ -52,7 +52,7 @@ export const FlagsSearch = ({ flags }: FlagSearchProps) => {
       {filterFlags.length === 0 ? (
         <NotFlags />
       ) : (
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-12 lg:gap-8">
+        <section id="flags-list" className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-12 lg:gap-8">
           {filterFlags?.map(
             (
               { image, capital, country, population, region, acronym },
@@ -61,6 +61,7 @@ export const FlagsSearch = ({ flags }: FlagSearchProps) => {
               return (
                 <Link key={index} href={{ pathname: `/country/${acronym}` }}>
                   <Card
+                    key={country}
                     id={index}
                     image={image}
                     country={country}
@@ -72,7 +73,7 @@ export const FlagsSearch = ({ flags }: FlagSearchProps) => {
               );
             }
           )}
-        </div>
+        </section>
       )}
     </>
   );

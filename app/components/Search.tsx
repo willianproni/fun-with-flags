@@ -10,6 +10,7 @@ export const Search = ({ set }: SearchProps) => {
       <div className="relative">
         <input
           type="search"
+          id="search"
           className="border border-gray-300 px-4 py-2 rounded-xl shadow-sm w-full text-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"
           placeholder="Search by country..."
           alt="input search flags"
