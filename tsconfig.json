@@ -22,18 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "jest.config.js"
-  ],
-  "exclude": [
-    "./cypress.config.ts",
-    //other exclusions that may help https://github.com/cypress-io/cypress/issues/22059#issuecomment-1428298264
-    "node_modules",
-    "cypress",
-    "**/*.cy.tsx"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.config.js"],
+  "exclude": ["node_modules", "cypress", "./cypress.config.ts"]
 }
