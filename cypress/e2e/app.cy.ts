@@ -15,6 +15,7 @@ describe("Fun with flags", () => {
 
   describe("Should search for a country by search input", () => {
     const country = "Brazil";
+    const board = "ARG"
 
     it("I am on the initial fun with flags page", () => {
       cy.visit("/");
@@ -35,6 +36,10 @@ describe("Fun with flags", () => {
     it(`Then see ${country} details`, () => {
       cy.contains("h2", "Brazil (BRA)").should("be.visible");
       cy.contains("h3", "Americas").should("be.visible");
+    });
+
+    it(`Then click in board ${board} button`, () => {
+      cy.contains("a", "ARG").click();
     });
 
     it('Then click in "back" button for back to home', () => {
