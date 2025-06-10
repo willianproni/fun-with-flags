@@ -6,7 +6,7 @@ type SearchProps = {
 
 export const Search = ({ set }: SearchProps) => {
   return (
-    <div className="w-full md:w-1/3 mb-2">
+    <div className="w-full md:w-2/3 mb-2">
       <div className="relative">
         <input
           type="search"
